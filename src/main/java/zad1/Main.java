@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+package zad1;
 
-public class MainGwiazdka {
+import java.sql.SQLOutput;
+import java.util.*;
+
+public class Main {
         public static void main(String[] args) {
 
         Random random =new Random();
@@ -12,22 +12,13 @@ public class MainGwiazdka {
 
         Scanner scanner = new Scanner(System.in);
 
-            System.out.println("podaj ilosc liczb wpisywanych:");
-        int liczbyWpisane = scanner.nextInt();
-
-            System.out.println("podaj ilosc liczb wygenerowanych:");
-
-            int liczbyWygenerowane = scanner.nextInt();
-
-
-
             List<Integer> list = new ArrayList();
-            while (liczbyWpisane-- > 0) {
+            for (int i = 0; i <5; i++) {
                 System.out.println("podaj liczby:");
                 int liczbaZaladowana = scanner.nextInt();
                 list.add(liczbaZaladowana);
             }
-            while (liczbyWygenerowane-- > 0){
+            for (int i = 0; i <5; i++){
                 int liczbaZaladowana = random.nextInt(1000);
                 list.add(liczbaZaladowana);
             }
