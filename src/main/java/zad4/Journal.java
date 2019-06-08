@@ -53,8 +53,18 @@ public class Journal {
         List<Uczen> listaWynikowa = new ArrayList<>();
         //magia
         Set<String> kopiaIndeksow = new HashSet<>(uczenMap.keySet());
-        for (String indeks){}
+    for (String indeks : kopiaIndeksow) {
+        try {
+            if (podajSrednia(indeks) <= 2.0) {
+                listaWynikowa.add(uczenMap.get(indeks));
+            }
+        } catch (UczenNotFoundException e) {
+            System.out.println("Błąd, nie można było odnaleźć studenta.");
+        }
     }
+
+        return listaWynikowa;
+}
 
     public List<Uczen> zwrocPosortowanaListeUczniow() {
         List<Uczen> uczenList = new ArrayList<>(uczenMap.values());
